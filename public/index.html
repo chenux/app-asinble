@@ -4,18 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Asinble</title>
 	<script src="js/socket/socket.io.js"></script>
+	<script src="js/ace/ace.js"></script>
 
 	<!-- <script src="main.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<h1></h1>
-	<div id="messages"></div>
-	<br/>
-	<form onsubmit="return addMessage(this)">
-	<input type="text" id="username" placeholder="Tu Nombre" >
-	<input type="text" id="texto" placeholder="Cuéntanos algo...">
-	<input type="submit" value="Enviar!">
-	</form>
+	<div id="toolbar"></div>
+	<div id="container">
+		<div id="editor"></div>
+	</div>
 </body>
 </html>
