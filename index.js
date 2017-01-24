@@ -1,6 +1,7 @@
 
 var compression = require('compression')
 var express = require('express');
+var express = require('http');
 //var browserify = require('browserify');
 //var React = require('react');
 //var ReactDOM = require('react-dom/server');
