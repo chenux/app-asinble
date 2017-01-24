@@ -20,6 +20,14 @@ body {
 
 	height: 100vh;
 	width: 100%;
-	background-color: #1d1e19;
+	/*background-color: #1d1e19;*/
+
+}
+
+#editor_c {
+	/*border: 1px solid lightgray;*/
+	/*height: 200px;*/
+	width: 100%;
+	height: 100vh;
 
 }

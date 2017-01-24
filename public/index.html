@@ -8,11 +8,23 @@
 
 	<!-- <script src="main.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
 </head>
 <body>
 	<div id="toolbar"></div>
 	<div id="container">
-		<div id="editor"></div>
+		<div id="editor_c">
+
+		int main() {
+
+
+		}</div>
 	</div>
+	<script>
+    var editor = ace.edit("editor_c");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/c_cpp");
+</script>
 </body>
 </html>
