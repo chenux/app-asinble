@@ -1,0 +1,67 @@
+mixin css(file)
+	link(rel='stylesheet', type='text/css', href=file)
+
+doctype html
+html(lang='es')
+	head
+		title= Asinble
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width', initial-scale='1', user-scalable='no')
+
+
+		// App
+		+css('css/main.css')
+
+		// Socket.io
+		script(src='js/socket/socket.io.js')
+
+		// CodeMirror
+		+css('js/codemirror/lib/codemirror.css')
+		+css('js/codemirror/theme/monokai.css')
+
+		script(src='js/codemirror/lib/codemirror.js')
+		script(src='js/codemirror/mode/clike/clike.js')
+		script(src='js/codemirror/addon/selection/active-line.js')
+		script(src='js/codemirror/addon/edit/matchbrackets.js')
+
+		// JQuery
+		script(src='js/jquery/jquery-3.1.1.js')
+
+	body
+		div.toolbar
+			if admin
+				button#button_build.toolbar-button.button-build
+
+		div#container
+
+			if code
+				textarea#code.
+					#{code}
+			else
+				textarea#code.
+					#include <iostream>
+
+					using namespace std;
+
+					int main() {
+
+						cout << "Hola";
+
+						return 0;
+					}
+		pre#out
+
+		if admin
+			script
+				include admin.js
+		else
+			script
+				include client.js
+
+
+
+
+
+
+
+
