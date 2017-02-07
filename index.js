@@ -80,26 +80,19 @@ io.on('connection', function(socket) {
 		utils.save_code(code);
 
 		const gcc = spawn('clang++', [
-			'./public/src/main.cpp',
-			'-o',
-			'./public/src/program'
+			'./public/src/main.cpp', '-o', './public/src/program'
 		]);
 
+		// Enviar errores.
 		gcc.stderr.on('data', (data) => {
-			console.log( String(data));
-			//io.sockets.emit('update-stderr', data);
-			io.sockets.emit('update-out',
-				String(data)
-			);
 
+			console.log( String('Código con errores'));
+			io.sockets.emit('update-clear', 'clear');
+			io.sockets.emit('update-out', String(data);
 
 		});
 
-		// gcc.stdout.on('data', (data) => {
-		// 	console.log( String(data));
-		// });
-
-
+		// Enviar salida del programa.
 		gcc.on('close', (code) => {
 
 			if (code == 0) {
@@ -109,8 +102,7 @@ io.on('connection', function(socket) {
 				const program = spawn('./public/src/program', ['']);
 
 				program.stdout.on('data', (out) => {
-					// console.log('Salida del programa');
-					console.log(String(out));
+					console.log('Salida del programa');
 					io.sockets.emit('update-out', String(out));
 				});
 			}
