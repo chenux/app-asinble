@@ -37,11 +37,3 @@ socket.on('update-selection', function(selection) {
 
 });
 
-
-
-socket.on('update-out', function(out) {
-
-	console.log(out);
-	$('#out').append(out);
-
-});

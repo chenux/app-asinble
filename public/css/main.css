@@ -77,13 +77,16 @@ body, html {
 
 #out {
 
+	border-top: 1px solid #3F3F3F;
+
 	background-color: #000000;
 	width: 100%;
 	color: #00FF00;
-	min-height: 40px;
+	height: 20vh;
 	padding: 10px;
 	box-sizing: border-box;
 	margin: 0;
+	overflow: auto;
 }
 
 

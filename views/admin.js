@@ -53,10 +53,4 @@ $( document ).ready(function() {
 });
 
 
-socket.on('update-out', function(out) {
-
-	console.log(out);
-	$('#out').append(out);
-
-});
 

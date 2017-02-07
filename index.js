@@ -9,6 +9,9 @@ var utils = require('./src/utils.js');
 var spawn = require('child_process').spawn;
 var entities = require("entities");
 
+var config = require("./config.json");
+
+
 var io = require('socket.io')(server);
 
 
@@ -77,9 +80,12 @@ io.on('connection', function(socket) {
 	// Enviar y recibir el .
 	socket.on('new-build', function(code) {
 
+		// Enviar borrado de salida.
+		io.sockets.emit('update-clear', 'clear');
+
 		utils.save_code(code);
 
-		const gcc = spawn('clang++', [
+		const gcc = spawn(config.compiler, [
 			'./public/src/main.cpp', '-o', './public/src/program'
 		]);
 
@@ -87,8 +93,7 @@ io.on('connection', function(socket) {
 		gcc.stderr.on('data', (data) => {
 
 			console.log( String('Código con errores'));
-			io.sockets.emit('update-clear', 'clear');
-			io.sockets.emit('update-out', String(data);
+			io.sockets.emit('update-out', String(data));
 
 		});
 
@@ -114,10 +119,9 @@ io.on('connection', function(socket) {
 
 });
 
+//console.log(config);
 
-
-
-server.listen(3000, function() {
+server.listen( config.port, function() {
 	var addr = server.address();
 	console.log('Listening @ http://%s:%d', addr.address, addr.port);
 })
