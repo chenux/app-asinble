@@ -2,7 +2,7 @@
 var compression = require('compression')
 var express = require('express');
 var app = express();
-var logger = require('morgan');
+//var logger = require('morgan');
 var server = require('http').Server(app);
 
 var utils = require('./src/utils.js');
@@ -15,7 +15,7 @@ var config = require("./config.json");
 var io = require('socket.io')(server);
 
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(compression());
 app.use(express.static('public'));
 app.set('views', './views');
@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
 
 io.on('connection', function(socket) {
 
-	console.log('Alguien se ha conectado con Sockets');
+	console.log('Cliente conectado');
 
 
 	// Recibir y recibir código.
@@ -123,7 +123,7 @@ io.on('connection', function(socket) {
 
 server.listen( config.port, function() {
 	var addr = server.address();
-	console.log('Listening @ http://%s:%d', addr.address, addr.port);
+	console.log('Escuchando en %d', addr.port);
 })
 
 
