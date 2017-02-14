@@ -42,12 +42,17 @@ editor.on("cursorActivity", function() {
 });
 
 
-
+// Compilar.
 $( document ).ready(function() {
 
 	$("#button_build").click(function() {
 
-		socket.emit('new-build', editor.getValue());
+		var data = {
+			'input' : $("#input_text").val(),
+			'code'  : editor.getValue()
+		};
+
+		socket.emit('new-build', data);
 	});
 
 });

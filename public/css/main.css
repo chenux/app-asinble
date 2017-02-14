@@ -75,10 +75,15 @@ body, html {
 	background: url("../svg/build.svg") #5d5d5d center no-repeat;
 }
 
+#container_input {
+	background-color: #272822;
+
+}
+
+
 #out {
 
 	border-top: 1px solid #3F3F3F;
-
 	background-color: #000000;
 	width: 100%;
 	color: #00FF00;
@@ -90,8 +95,20 @@ body, html {
 }
 
 
+#container_input {
+	text-align: center;
+	background-color: #A0A0A0;
+}
 
-
+#input_text {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	font-family: ;
+	background-color: transparent;
+	padding: 5px;
+	color: #3F3F3F;
+}
 
 
 

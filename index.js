@@ -78,22 +78,23 @@ io.on('connection', function(socket) {
 	});
 
 	// Enviar y recibir el .
-	socket.on('new-build', function(code) {
+	socket.on('new-build', function(data) {
 
 		// Enviar borrado de salida.
 		io.sockets.emit('update-clear', 'clear');
 
-		utils.save_code(code);
+		utils.save_code(data.code);
 
+		// Compilar.
 		const gcc = spawn(config.compiler, [
 			'./public/src/main.cpp', '-o', './public/src/program'
 		]);
 
 		// Enviar errores.
-		gcc.stderr.on('data', (data) => {
+		gcc.stderr.on('data', (out) => {
 
 			console.log( String('Código con errores'));
-			io.sockets.emit('update-out', String(data));
+			io.sockets.emit('update-out', String(out));
 
 		});
 
@@ -104,7 +105,12 @@ io.on('connection', function(socket) {
 
 				console.log('Sin errores');
 
+
+				// Ejecitar el porgrama
 				const program = spawn('./public/src/program', ['']);
+
+				program.stdin.write(data.input + '\n');
+				program.stdin.end();
 
 				program.stdout.on('data', (out) => {
 					console.log('Salida del programa');
