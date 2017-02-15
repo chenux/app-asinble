@@ -45,6 +45,7 @@ editor.on("cursorActivity", function() {
 // Compilar.
 $( document ).ready(function() {
 
+	// Enviar código.
 	$("#button_build").click(function() {
 
 		var data = {
@@ -53,6 +54,12 @@ $( document ).ready(function() {
 		};
 
 		socket.emit('new-build', data);
+	});
+
+	// Enviar entrada.
+	$("#input_text").change(function() {
+
+
 	});
 
 });
