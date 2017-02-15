@@ -60,6 +60,7 @@ $( document ).ready(function() {
 	$("#input_text").change(function() {
 
 
+
 	});
 
 });
