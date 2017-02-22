@@ -59,6 +59,7 @@ $( document ).ready(function() {
 	// Enviar entrada.
 	$("#input_text").change(function() {
 
+		socket.emit('new-input', data);
 
 
 	});
