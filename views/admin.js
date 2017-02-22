@@ -35,7 +35,6 @@ $('#input_text').bind('input propertychange', function() {
 
 });
 
-
 // Enviar selección o cursor.
 editor.on('cursorActivity', function() {
 
