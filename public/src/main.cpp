@@ -3,8 +3,14 @@
 using namespace std;
 
 int main() {
-
-	cout << "Hola";
+	
+	unsigned long long int a;
+	
+	cin >> a;
+	cout << a;
 
 	return 0;
 }
+
+
+
