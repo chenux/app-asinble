@@ -4,13 +4,11 @@ using namespace std;
 
 int main() {
 	
-	unsigned long long int a;
+	unsigned long long a;
 	
 	cin >> a;
 	cout << a;
 
 	return 0;
 }
-
-
 

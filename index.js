@@ -34,15 +34,12 @@ app.get('/admin', function (req, res) {
 });
 
 
-
-
 app.get('/', function (req, res) {
 
 	res.render('index', {
 		'admin': false,
 		'code': code
 	});
-
 
 });
 
@@ -111,7 +108,6 @@ io.on('connection', function(socket) {
 			if (code == 0) {
 
 				console.log('Sin errores');
-
 
 				// Ejecitar el porgrama
 				const program = spawn('./public/src/program', ['']);
