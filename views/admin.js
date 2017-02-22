@@ -1,8 +1,8 @@
 
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 	lineNumbers: true,
-	mode: "text/x-c++src",
-	theme: "monokai",
+	mode: 'text/x-c++src',
+	theme: 'monokai',
 	styleActiveLine: true,
 	matchBrackets: true,
 	indentUnit: 4,
@@ -16,7 +16,7 @@ var socket = io.connect(location.origin, { 'forceNew': true });
 
 
 // Enviar código.
-editor.on("change", function() {
+editor.on('change', function() {
 
 	var code = editor.getValue()
 
@@ -25,9 +25,17 @@ editor.on("change", function() {
 
 });
 
+// Enviar datos de entrada.
+$('#input_text').bind('input propertychange', function() {
+
+	var input = $('#input_text').val();
+	socket.emit('new-input', input);
+
+});
+
 
 // Enviar selección o cursor.
-editor.on("cursorActivity", function() {
+editor.on('cursorActivity', function() {
 
 	if ( editor.somethingSelected() ) {
 
@@ -46,23 +54,17 @@ editor.on("cursorActivity", function() {
 $( document ).ready(function() {
 
 	// Enviar código.
-	$("#button_build").click(function() {
+	$('#button_build').click(function() {
 
 		var data = {
-			'input' : $("#input_text").val(),
+			'input' : $('#input_text').val(),
 			'code'  : editor.getValue()
 		};
 
 		socket.emit('new-build', data);
 	});
 
-	// Enviar entrada.
-	$("#input_text").change(function() {
 
-		socket.emit('new-input', data);
-
-
-	});
 
 });
 

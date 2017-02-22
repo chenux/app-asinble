@@ -37,3 +37,10 @@ socket.on('update-selection', function(selection) {
 
 });
 
+// Recibir datos de entrada.
+socket.on('update-input', function(input) {
+
+	$("#input_text").val(input);
+
+});
+

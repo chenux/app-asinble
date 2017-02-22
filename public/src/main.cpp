@@ -4,11 +4,7 @@ using namespace std;
 
 int main() {
 
+	cout << "Hola";
 
-	string a;
-	
-	getline(cin, a);
-		cout << "Hola ";
-	cout  << a;
 	return 0;
 }
