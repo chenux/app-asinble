@@ -3,5 +3,4 @@ config.json
 public/src/main.cpp
 public/src/program
 
-
-
+!.gitignore
