@@ -1,6 +1,4 @@
 node_modules
 config.json
-public/src/main.cpp
-public/src/program
+public/src
 
-!.gitignore
