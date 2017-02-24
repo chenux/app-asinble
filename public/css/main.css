@@ -7,7 +7,7 @@ body, html {
 
 
 #container {
-	height: 80vh;
+	height: 70vh;
 	width: 100%;
 	clear: both;
 }
@@ -18,7 +18,7 @@ body, html {
 }
 
 .CodeMirror {
-	height: 80vh !important;
+	height: 70vh !important;
 }
 
 
