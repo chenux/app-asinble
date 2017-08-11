@@ -1,24 +1,21 @@
 {
-  "name": "asinble",
-  "version": "0.0.1",
-  "description": "Code Editor fo C/C++",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
-  },
-  "author": "cheche@fnueve.xyz",
-  "license": "MIT",
-  "dependencies": {
-    "compression": "^1.6.2",
-    "config.json": "0.0.4",
-    "entities": "^1.1.1",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "pug": "^2.0.0-beta10",
-    "socket.io": "^1.7.2"
-  },
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  }
+	"name": "asinble",
+	"version": "0.0.1",
+	"description": "Code Editor fo C/C++",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon index.js"
+	},
+	"author": "cheche@fnueve.xyz",
+	"license": "MIT",
+	"dependencies": {
+		"compression": "^1.6.2",
+		"config.json": "0.0.4",
+		"entities": "^1.1.1",
+		"express": "^4.14.0",
+		"morgan": "^1.7.0",
+		"pug": "^2.0.0-beta10",
+		"socket.io": "^1.7.2"
+	}
 }

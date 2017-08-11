@@ -45,13 +45,13 @@ app.get('/', function (req, res) {
 
 
 // Conexión.
-io.on('connection', function(socket) {
+io.on('connection', function (socket) {
 
 	console.log('Cliente conectado');
 
 
 	// Recibir y enviar código.
-	socket.on('new-code', function(data) {
+	socket.on('new-code', function (data) {
 
 		code = data;
 		//console.log(code);
@@ -60,7 +60,7 @@ io.on('connection', function(socket) {
 	});
 
 	// Recibir y enviar el cursor.
-	socket.on('new-cursor', function(cursor) {
+	socket.on('new-cursor', function (cursor) {
 
 		// console.log(cursor);
 		io.sockets.emit('update-cursor', cursor);
@@ -68,7 +68,7 @@ io.on('connection', function(socket) {
 	});
 
 	// Recibir y enviar el selección.
-	socket.on('new-selection', function(selection) {
+	socket.on('new-selection', function (selection) {
 
 		// console.log(selection);
 		io.sockets.emit('update-selection', selection);
@@ -76,13 +76,13 @@ io.on('connection', function(socket) {
 	});
 
 	// Recibir y enviar los datos de entrada.
-	socket.on('new-input', function(input) {
+	socket.on('new-input', function (input) {
 		// console.log(input);
 		io.sockets.emit('update-input', input);
 	});
 
 	// Recibir el código.
-	socket.on('new-build', function(data) {
+	socket.on('new-build', function (data) {
 
 		// Recibir borrado de salida.
 		io.sockets.emit('update-clear', 'clear');
@@ -97,7 +97,7 @@ io.on('connection', function(socket) {
 		// Enviar errores.
 		gcc.stderr.on('data', (out) => {
 
-			console.log( String('Código con errores'));
+			console.log(String('Código con errores'));
 			io.sockets.emit('update-out', String(out));
 
 		});
@@ -130,12 +130,9 @@ io.on('connection', function(socket) {
 
 //console.log(config);
 
-server.listen( config.port, function() {
+server.listen(config.port, function () {
 	var addr = server.address();
 	console.log('Escuchando en %d', addr.port);
 })
-
-
-
 
 
