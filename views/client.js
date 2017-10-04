@@ -2,7 +2,7 @@
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 	lineNumbers: true,
 	mode: "text/x-c++src",
-	theme: "mdn-like",
+	//theme: "mdn-like",
 	styleActiveLine: true,
 	matchBrackets: true,
 	indentUnit: 4,
