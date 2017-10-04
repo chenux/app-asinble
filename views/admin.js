@@ -4,7 +4,7 @@
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 	lineNumbers: true,
 	mode: 'text/x-c++src',
-	theme: 'monokai',
+	theme: 'mdn-like',
 	styleActiveLine: true,
 	matchBrackets: true,
 	indentUnit: 4,
