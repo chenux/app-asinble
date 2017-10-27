@@ -8,7 +8,7 @@ Restart=always
 RestartSec=5                       # Restart service after 10 seconds if node service crashes
 StandardOutput=syslog               # Output to syslog
 StandardError=syslog                # Output to syslog
-SyslogIdentifier=app-dbd
+SyslogIdentifier=app-asinble
 #User=<alternate user>
 #Group=<alternate group>
 
