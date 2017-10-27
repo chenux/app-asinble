@@ -1,0 +1,17 @@
+[Unit]
+Description=app-asinble
+
+[Service]
+ExecStart=/usr/bin/node /home/cheche/apps/app-asinble/index.js
+WorkingDirectory=/home/cheche/apps/app-asinble
+Restart=always
+RestartSec=5                       # Restart service after 10 seconds if node service crashes
+StandardOutput=syslog               # Output to syslog
+StandardError=syslog                # Output to syslog
+SyslogIdentifier=app-dbd
+#User=<alternate user>
+#Group=<alternate group>
+
+[Install]
+WantedBy=multi-user.target
+
